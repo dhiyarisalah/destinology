@@ -4,5 +4,3 @@ Member of Cloud Computing
 |:------:|:----------:|:----------:|
 | Dhiya Risalah Ghaida | C002BSX3682 | Bandung Institute of Technology |
 | Kofifan Hertza Haribowo | C002BSY3540 | Bandung Institute of Technology |
-
-**
