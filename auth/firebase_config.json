@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "117977404889",
+    "project_id": "destinology",
+    "storage_bucket": "destinology.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117977404889:android:1c8701c1f589a3ffa8f5c8",
+        "android_client_info": {
+          "package_name": "com.ch2ps397.destinology"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKtupmcL6B-g9qdI4vbm34hoy9Bn8Z9AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

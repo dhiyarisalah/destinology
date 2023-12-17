@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "destinology",
+  "private_key_id": "e5a2dba66ee8e8d3336e3e87f2dc86d1f0fc10b3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDFgy21mcFAVOZG\n2Uftm6tuprbrQkKW/Am/wazRIc2bPCPFmuXKGUcDcuIMM4AASMLP4v58Dy7Y4p2l\netPsHnk8PeZtYuyKs8lSv90FpKwGtOkBLzxni8VYLaS1qCPTU+XMPsRmTZZXh48Q\no/E8lY8goDG56whzqJLi6JRdk3lsvC2UYeUu62uU5bE1qQ6JsdgnxSuq57VsnnnS\ngwrv0YVMll+DNT1kBP32myEpe/hE/SyqU4nEhqqsXEWG4iEmik+k7yoQxkW2rt+o\n6BDKjDZhaPDuowZLOcbOT+pRrhyfJiGAV3czGRk2jAPGBhRsXAgq2a5Eeb2I97kd\nAXG529RdAgMBAAECggEAW4OfwrRWd7W+qpYTPzMxF8hUGaYuT2HBLKGSrqWQa/xO\nAMl37g+POThaJ1gXV0pfRU5CJn4scR5y99D070LhXnm50fYTbmLGBbrTMEGv2T2q\ndjuKK9n1mpkvZ2HcE5cccumkO1h4r96l+YpUhIMxeWbwE1okpN43DL7Bu6fQi4HG\n12b+Vx3Lt/fw6hmZ6BVrWtc8ZhOcPuTQlSu+5TlGCHYnHSuV+Tj4OKQ3brPdglsX\nollBNRtftvG7+5yohsLJvUnYM1BAcgg1ISMuGk/pau/WpdJ1CJ5byc4lZJxNEVdv\nETTUaH8H495tJslklRx9jHwXabZbjSDk/7JIBwRXOwKBgQDmQmX6xnfsfc7mXCIH\nu4DMsfwOcDucsvygGH3/0eDgJnCkB219g3d/I9XN07Lgz4JOvsf9Hq3kO0yG3k5+\nvCCB+ZLW3BIQobTMiiTgjP13n3VwmBCmKW0NlMNH3zLIdIOy1WLYv4SH3NKujLae\nhFjnILEBkWya9KJwPvizWjfatwKBgQDbl59TBuDTfKWr2qyDZmdXus9/lALu993W\nube3m5Ja2ikgAwBjsbRJAFWpTYVgBx9NT2cMbpIbY942FXCq0loM/+KlXo7jFEE3\nEdPINxDerV6wAOhI5Ye1AP9PdmIsrSLi3ry+egasR1rtONEblbY+orWz8FKhc7Lb\n9snOo1GFiwKBgB+lOnzHsA2pkLjqKqcjZuU7BOg7FoZHtx6Nnyt8fcpwngR9HNgm\nLFMl6ql6EdiBzGfkInowMDfwymiyvtj+I/2Y/kxXPIhaoQ2HYuAVoHRDTxGlZIxh\nnyJBssD69PDFyp/WYdpmH+HIQJBKuIJ6r/k77ffIM8PsITMKBIYpvQlrAoGAcK+j\nG/k4oG6jmcgSpS+Esrlzx9VNmBHsbkdJptgXx7WSSxIfPgmwKZIZY1MbsYaWIpcv\nm2qWYaXjHz/rXE2r1mXtic03aAI54Set1V2ks5CmOY2NpfLbrCAB5GYsxR5n+6Iv\nm1OFXx0S5Q82B4DRT90xf1BBJwb3bvd64iZfLDcCgYBCf3dKaBjA8yK4tWLQsVHH\nWECfdumMIN8xj4K3YQiAF+/pQFsWZhgsUNwcntkwJTM1DxbLWseeNbjpqr+IgHL3\nwFZpFAKMzpgaRVFDqBCSyR7IU8kkoUgiKK5V0YEWidDbIcG5IRUlpf6VUiYwp42/\nm+ktvWPeJj+MJfz02aDoNQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-lszmt@destinology.iam.gserviceaccount.com",
+  "client_id": "107957711147956219472",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-lszmt%40destinology.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
