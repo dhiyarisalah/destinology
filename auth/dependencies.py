@@ -1,24 +1,20 @@
-from fastapi import Depends, HTTPException, Request
-from fastapi.security import OAuth2PasswordBearer
+from fastapi import Depends, HTTPException, status
+from fastapi.security import HTTPBearer
 from firebase_admin import auth
+from firebase_admin.exceptions import FirebaseError
 from utils import firestore_db
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/signin")
+# Change this to HTTPBearer since you're only verifying Firebase tokens
+oauth2_scheme = HTTPBearer()
 
-
-async def get_current_user(
-    token: str = Depends(oauth2_scheme), request: Request = None
-):
+async def get_current_user(token: str = Depends(oauth2_scheme)):
     try:
-        verified_token = auth.verify_id_token(token)
-        auth_user = auth.get_user(verified_token["user_id"])
-        uid = auth_user.uid
-        user_doc_ref = firestore_db.collection("users").document(uid)
-        auth_user.user_doc_ref = user_doc_ref
-        request.state.auth_user = auth_user
-        return auth_user
+        token_credentials = token.credentials
+        decoded_token = auth.verify_id_token(token_credentials)
+        uid = decoded_token['uid']
+        return auth.get_user(uid)
     except Exception as e:
         raise HTTPException(
-            status_code=401,
-            detail={"error": {"exception": type(e).__name__, "message": str(e)}},
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=str(e)
         )
