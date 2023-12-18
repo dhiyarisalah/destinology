@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from routers import auth, users, iteniary
 from dependencies import get_current_user
 from routers.iteniary import router as iteniary_router
+from routers.Landmark import router as landmark_router
 
 app = FastAPI(title="Destinology", description="Itinerary Planner API")
 
@@ -37,6 +38,14 @@ app.include_router(
     responses={404: {"description": "Not found"}},
     dependencies=[Depends(get_current_user)]
 )
+
+app.include_router(
+    landmark_router,
+    prefix="/models",
+    tags=["Landmark Prediction"],
+    responses={404: {"description": "Not found"}}
+)
+
 
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=True)
