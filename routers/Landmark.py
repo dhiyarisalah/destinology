@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, File, UploadFile
-from schemas.landmark import LandmarkResponse, LandmarkItem
+from schemas.landmark import LandmarkResponse
 from PIL import Image
 from keras.models import load_model
 import io
@@ -10,10 +10,10 @@ import json
 router = APIRouter()
 
 @router.post("/landmark", response_model=LandmarkResponse)
-async def create_landmark(file: UploadFile = File(...)):
+async def landmark_prediction(file: UploadFile = File(...)):
 
 
-    model = load_model("../Model/Landmark-R.h5")
+    model = load_model("./Model/Landmark-R.h5")
     labels = ["Candi-Borobudur", "Gedung-Sate", "Patung-GWK", "Suro-Boyo", "Tugu-Jogja", "Tugu-Monas"]
 
     try:
@@ -28,19 +28,15 @@ async def create_landmark(file: UploadFile = File(...)):
         highest_score_index = np.argmax(prediction)
         highest_score_label = labels[highest_score_index]
 
-        f_deskripsi = open('../Model/dataset/deskripsi_tempat.json')
-        f_fun_fact = open('../Model/dataset/fun_fact_tempat.json')
+        f_deskripsi = open('./Model/dataset/deskripsi_tempat.json')
+        f_fun_fact = open('./Model/dataset/fun_fact_tempat.json')
 
         desc = json.load(f_deskripsi)
         fun_fact = json.load(f_fun_fact)
 
+        prediction_result = LandmarkResponse(nama=highest_score_label, desc=desc[highest_score_label],fact=fun_fact[highest_score_label])
 
-        prediction_result = LandmarkItem(name=highest_score_label,
-                                        desc=desc[highest_score_label],
-                                        fact=fun_fact[highest_score_label])
-        
-        return LandmarkResponse(landmark=prediction_result)
-    
+        return prediction_result
 
     except Exception as e:
         print(f"Error in recognizing landmark: {e}")

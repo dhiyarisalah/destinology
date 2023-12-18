@@ -1,13 +1,10 @@
 from pydantic import BaseModel
 from typing import List
 
-class LandmarkItem(BaseModel) :
+class LandmarkResponse(BaseModel) :
     nama: str
     desc: str
     fact: str
 
-
-class LandmarkResponse(BaseModel):
-    Landmark_prediction:LandmarkItem
 
 
