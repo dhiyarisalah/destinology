@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Depends
 from schemas.iteniary import IteniaryRequest, IteniaryResponse, IteniaryItem
-from iteniary_planner import iteniary_planner  # Import the function
+from iteniary_planner import iteniary_planner, regenerate_location_in_itinerary  # Import the function
 from dependencies import get_current_user
 from firebase_admin.auth import UserRecord
 import traceback
@@ -32,3 +32,20 @@ async def create_iteniary(request: IteniaryRequest, firebase_user: UserRecord = 
         print(f"Error in create_iteniary: {e}")
         traceback.print_exc()
         raise HTTPException(status_code=400, detail=str(e))
+
+@router.post("/itinerary-generate", response_model=IteniaryResponse)
+async def regenerate_iteniary(itinerary_data: IteniaryResponse, location_to_regenerate: str):
+    try:
+        # Regenerate the location
+        updated_itinerary = regenerate_location_in_itinerary(itinerary_data.dict(), location_to_regenerate, './Model/dataset/alternative_locations.json')
+        # Return the updated itinerary
+        return IteniaryResponse(**updated_itinerary)
+    except Exception as e:
+        print(f"Error in regenerate_iteniary: {e}")
+        traceback.print_exc()
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+
+
+

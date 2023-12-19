@@ -2,6 +2,9 @@ from tensorflow.keras.models import load_model
 import numpy as np
 import pandas as pd
 import tensorflow as tf
+import random
+import json
+
 
 def iteniary_model (user_id, city) :
     model=load_model('./Model/iteniary_model')
@@ -151,3 +154,26 @@ def print_itinerary(df_iteniary):
         # Print a newline for separation between days
         print("\n")
 
+# Your regeneration function
+def regenerate_location_in_itinerary(itinerary, location_to_regenerate, alternatives_filename):
+    # Load alternative locations
+
+    # Find the location to be regenerated
+    location = next((item for item in itinerary['itinerary'] if item["place_name"] == location_to_regenerate), None)
+    
+    if location:
+        # Filter alternatives by the same 'day'
+        same_day_alternatives = [loc for loc in alternatives_filename if loc['day'] == location['day']]
+        
+        # Choose a random new location from the alternatives with the same 'day'
+        if same_day_alternatives:
+            new_location = random.choice(same_day_alternatives)
+            # Replace the old location with the new one
+            index_to_replace = itinerary['itinerary'].index(location)
+            itinerary['itinerary'][index_to_replace] = new_location
+        else:
+            raise ValueError(f"No alternative locations found for day {location['day']}")
+    else:
+        raise ValueError(f"Location '{location_to_regenerate}' not found in itinerary")
+
+    return itinerary
