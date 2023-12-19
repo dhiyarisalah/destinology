@@ -154,16 +154,22 @@ def print_itinerary(df_iteniary):
         # Print a newline for separation between days
         print("\n")
 
+# Load alternative locations from a JSON file
+def load_alternative_locations(filename='./Model/dataset/alternative_locations.json'):
+    with open(filename, 'r') as file:
+        return json.load(file)
+
 # Your regeneration function
 def regenerate_location_in_itinerary(itinerary, location_to_regenerate, alternatives_filename):
     # Load alternative locations
+    alternative_locations = load_alternative_locations(alternatives_filename)
 
     # Find the location to be regenerated
     location = next((item for item in itinerary['itinerary'] if item["place_name"] == location_to_regenerate), None)
     
     if location:
         # Filter alternatives by the same 'day'
-        same_day_alternatives = [loc for loc in alternatives_filename if loc['day'] == location['day']]
+        same_day_alternatives = [loc for loc in alternative_locations if loc['day'] == location['day']]
         
         # Choose a random new location from the alternatives with the same 'day'
         if same_day_alternatives:
