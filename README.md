@@ -40,7 +40,7 @@ Delete a user's account and associated data.
 
 
 ## Models
-## Itinerary Planner 
+### Itinerary Planner 
 The Itinerary Planner is an innovative feature of our API, designed to simplify and enhance the travel planning experience. It offers users the ability to create their travel itineraries with ease. This planner not only assists in organizing trips but also includes functionality for automatic itinerary generation based on user preferences such as city, duration, and price. The Itinerary Planner is an indispensable tool for travelers seeking a hassle-free and personalized way to plan their journeys.
 
 ### Endpoints
@@ -50,7 +50,7 @@ Automatically generate a travel itinerary based on user preferences.
 - **'/models/itinerary-generate'**
 Regenerating parts of a travel itinerary that do not align with the user's preferences
 
-## Landmark Prediction 
+### Landmark Prediction 
 Landmark Prediction is an advanced feature of our API that leverages image recognition to identify and provide detailed information about landmarks. This tool is designed for users who wish to learn more about specific landmarks or explore their surroundings through images. By analyzing input from the user, it offers insightful and accurate information about various landmarks, enhancing the user's understanding and experience of different cultural and historical sites.
 
 ### Endpoints
@@ -108,3 +108,7 @@ To set up the environment required by the APIs and AI-Model that will be deploye
 ```
 
 Thank you :)
+
+# Other Path Repository
+### [Machine Learning](https://github.com/diga-tech/Destinology_ML)
+### [Mobile Development](https://github.com/rizfirsy-gh/destinology-app)
