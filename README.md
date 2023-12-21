@@ -98,11 +98,18 @@ To set up the environment required by the APIs and AI-Model that will be deploye
 ```
 ! pip3 install -r requirements.txt
 ```
-4. After that run this code to start the server
+4. Create/Run Session Manager
+```
+! tmux new -s session
+```
+```
+! tmux attach
+```
+5. After that run this code to start the server
 ```
 ! python3 main-api.py
 ```
-5. Or this code to keep the program running
+6. Or this code to keep the program running
 ```
 ! nohup python3 main-api.py &
 ```
